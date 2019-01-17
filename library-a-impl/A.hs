@@ -1,4 +1,4 @@
-module A1 where
+module A where
 
 newtype A = A { unA :: Int }
 
