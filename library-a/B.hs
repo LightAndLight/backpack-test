@@ -1,3 +1,4 @@
+{-# language TemplateHaskell #-}
 module B where
 
 import A.Sig
