@@ -2,4 +2,4 @@ signature A.Sig where
 
 data A
 
-a :: A
+showA :: A -> String

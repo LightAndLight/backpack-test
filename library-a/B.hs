@@ -1,6 +1,7 @@
+{-# language TemplateHaskell #-}
 module B where
 
 import A.Sig
 
-b :: A
-b = a
+exclaimA :: A -> String
+exclaimA = (++ "!") . showA
