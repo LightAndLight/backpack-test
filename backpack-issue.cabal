@@ -15,10 +15,18 @@ build-type:          Simple
 extra-source-files:  CHANGELOG.md
 cabal-version:       >=2
 
+library some-template-haskell
+  exposed-modules:     TH
+  build-depends:       base >=4.12 && <4.13
+                     , template-haskell
+  hs-source-dirs:      some-template-haskell
+  default-language:    Haskell2010
+
 library library-a
   signatures:          A.Sig
   exposed-modules:     B
   build-depends:       base >=4.12 && <4.13
+                     , some-template-haskell
   hs-source-dirs:      library-a
   default-language:    Haskell2010
 
@@ -32,15 +40,17 @@ library library-b
   exposed-modules:     C
   build-depends:       base >=4.12 && <4.13
                      , library-a
+                     , some-template-haskell
   hs-source-dirs:      library-b
   default-language:    Haskell2010
 
 library
   mixins:              library-a requires (A.Sig as A)
-                     , library-b requires (A.Sig as A)
+  exposed-modules:     D
   reexported-modules:  A, B, C
   build-depends:       base >=4.12 && <4.13
                      , library-a
                      , library-a-impl
                      , library-b
+  hs-source-dirs:      .
   default-language:    Haskell2010
