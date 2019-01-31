@@ -52,5 +52,5 @@ library
                      , library-a
                      , library-a-impl
                      , library-b
-  hs-source-dirs:      .
+  hs-source-dirs:      library-c
   default-language:    Haskell2010
