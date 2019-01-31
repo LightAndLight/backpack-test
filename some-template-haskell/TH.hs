@@ -12,7 +12,6 @@ aSplice name = do
       liftIO $ putStrLn $ pprint $ res
       pure res
     _ -> undefined
-  pure []
   where
     ctorToDecs :: Con -> [Dec]
     ctorToDecs (RecC _ fields) =
