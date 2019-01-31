@@ -37,7 +37,7 @@ library library-a-impl
   default-language:    Haskell2010
 
 library library-b
-  exposed-modules:     C
+  exposed-modules:     C, D
   build-depends:       base >=4.12 && <4.13
                      , library-a
                      , some-template-haskell
@@ -46,8 +46,8 @@ library library-b
 
 library
   mixins:              library-a requires (A.Sig as A)
-  exposed-modules:     D
-  reexported-modules:  A, B, C
+  exposed-modules:     E
+  reexported-modules:  A, B, C, D
   build-depends:       base >=4.12 && <4.13
                      , library-a
                      , library-a-impl
